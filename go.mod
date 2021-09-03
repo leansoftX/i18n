@@ -1,4 +1,4 @@
-module github.com/leansoftx/i18n
+module github.com/leansoftX/i18n
 
 go 1.13
 
