@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/gohouse/e"
-	"github.com/gohouse/i18n"
+	"github.com/leansoftx/i18n"
 )
 
 // ParserJson json解析器对象

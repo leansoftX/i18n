@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
-	"github.com/gohouse/i18n"
+
+	"github.com/leansoftx/i18n"
+
 	// 这里不要忘记引入驱动,如引入默认的json驱动
-	_ "github.com/gohouse/i18n/parser_json"
+	_ "github.com/leansoftx/i18n/parser_json"
 )
 
 func main() {
 	lang := i18n.NewI18n(
 		// 这里指定语言文件路径
-		i18n.LangDirectory("/Users/mac/go/src/github.com/gohouse/i18n/examples/language"),
+		i18n.LangDirectory("/Users/mac/go/src/github.com/leansoftx/i18n/examples/language"),
 
 		// 这里如果不i设置, 则默认使用zh_cn
 		//i18n.DefaultLang("zh_cn"),
