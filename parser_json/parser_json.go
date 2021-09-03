@@ -2,12 +2,13 @@ package parser_json
 
 import (
 	"encoding/json"
-	"github.com/gohouse/e"
-	"github.com/gohouse/i18n"
 	"io/ioutil"
 	"log"
 	"os"
 	"strings"
+
+	"github.com/gohouse/e"
+	"github.com/gohouse/i18n"
 )
 
 // ParserJson json解析器对象
@@ -57,6 +58,9 @@ func (pj *ParserJson) Parse() e.Error {
 		//fileAllReal = append(fileAllReal, fileSuf)
 
 		// 解析语言和文件名
+		if strings.ToLower(fileSuf) == ".ds_store" { // 在mac系统下，目录中会存在.ds_store文件
+			continue
+		}
 		split := strings.Split(fileSuf, "/")
 		if len(split) != 2 {
 			return e.New("目录格式错误")
@@ -110,7 +114,7 @@ func (pj *ParserJson) ReadBytesFromFile(filePath string) ([]byte, error) {
 // LoadWithDefault 获取内容
 func (pj *ParserJson) LoadWithDefault(key string, defaultVal ...string) interface{} {
 	if key == "" {
-		return nil
+		return pj.val[StringToKey(pj.opts.DefaultLang)] // 如果key为空，就返回整个数据
 	}
 	var split []string
 	// 如果key包含了点,则为多级调用
