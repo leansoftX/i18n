@@ -3,7 +3,7 @@ package parser_json
 import (
 	"testing"
 
-	"github.com/leansoftx/i18n"
+	"github.com/leansoftX/i18n"
 )
 
 func TestNewI18nDefault(t *testing.T) {
@@ -11,7 +11,7 @@ func TestNewI18nDefault(t *testing.T) {
 	pj.SetOptions(&i18n.Options{
 		DefaultParser: "json",
 		DefaultLang:   "zh_cn",
-		LangDirectory: "/Users/mac/go/src/github.com/leansoftx/i18n/examples/language",
+		LangDirectory: "/Users/mac/go/src/github.com/leansoftX/i18n/examples/language",
 		//LangDirectory:  "../examples/language",
 		CacheDirectory: "",
 	})

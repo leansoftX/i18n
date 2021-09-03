@@ -1,6 +1,6 @@
 package parser_json
 
-import "github.com/leansoftx/i18n"
+import "github.com/leansoftX/i18n"
 
 const PARSER = "json"
 
